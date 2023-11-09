@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hostel_management/screens/auth/user_name_field.dart';
 import 'package:hostel_management/utils/dimensions.dart';
 
@@ -45,7 +46,9 @@ class _LoginScreenState extends State<LoginScreen> {
               UserNameField(textEditingController: textEditingController),
               const SizedBox(height: 20),
               FilledButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.goNamed('dashboard');
+                },
                 child: const Text('Log in'),
               ),
             ],

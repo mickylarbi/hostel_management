@@ -10,6 +10,25 @@ class App extends StatelessWidget {
       routerConfig: goRouter,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        colorSchemeSeed: Colors.indigo,
+        scaffoldBackgroundColor: Colors.grey[50],
+        inputDecorationTheme: InputDecorationTheme(
+          isDense: true,
+          hintStyle: TextStyle(color: Colors.grey[500]),
+          filled: true,
+          fillColor: Colors.grey[300],
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(16),
+            borderSide: BorderSide.none,
+          ),
+          prefixIconColor: Colors.grey[500],
+        ),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.grey[50],
+          foregroundColor: Colors.black,
+          elevation: 0,
+          scrolledUnderElevation: 0,
+        ),
         filledButtonTheme: FilledButtonThemeData(
           style: FilledButton.styleFrom(
             // minimumSize: const Size.fromHeight(44),
