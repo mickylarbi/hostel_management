@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hostel_management/models/room.dart';
+import 'package:hostel_management/utils/colors.dart';
 import 'package:hostel_management/utils/textThemes.dart';
 
 class RoomCard extends StatelessWidget {
@@ -14,13 +15,13 @@ class RoomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        context.goNamed('room_details', pathParameters: {'id': room.id!});
+        context.goNamed('room_details', extra: room);
       },
       borderRadius: BorderRadius.circular(20),
       child: Container(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: backgroundColor().withOpacity(.15),
+          color: Colors.blueGrey.withOpacity(.15),
           borderRadius: BorderRadius.circular(20),
         ),
         child: Column(
@@ -28,8 +29,19 @@ class RoomCard extends StatelessWidget {
           children: [
             const Spacer(),
             Align(
-                alignment: Alignment.centerLeft,
-                child: Text(room.number, style: headlineSmall(context))),
+              alignment: Alignment.centerLeft,
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: roomColor(room).withOpacity(.1),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Hero(
+                  tag: room.id!,
+                  child: Text(room.number, style: headlineSmall(context)),
+                ),
+              ),
+            ),
             const Spacer(),
             Row(
               children: [
@@ -54,21 +66,5 @@ class RoomCard extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  Color backgroundColor() {
-    if (room.capacity == 1 && room.size == RoomSize.small) {
-      return Colors.indigoAccent;
-    }
-    if (room.capacity == 1 && room.size == RoomSize.large) {
-      return Colors.pinkAccent;
-    }
-    if (room.capacity == 2 && room.size == RoomSize.small) {
-      return Colors.amberAccent;
-    }
-    if (room.capacity == 2 && room.size == RoomSize.large) {
-      return Colors.cyanAccent;
-    }
-    return Colors.black;
   }
 }

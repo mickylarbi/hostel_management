@@ -4,9 +4,13 @@ import 'package:hostel_management/screens/home/dashboard/dashboard_screen.dart';
 import 'package:hostel_management/screens/home/more/more_screen.dart';
 import 'package:hostel_management/screens/home/nav_bar_shell.dart';
 import 'package:hostel_management/screens/home/payments/payments_screen.dart';
-import 'package:hostel_management/screens/home/rooms/edit_room_details_screen.dart';
+import 'package:hostel_management/screens/home/rooms/edit_room_screen.dart';
 import 'package:hostel_management/screens/home/rooms/room_details_screen.dart';
 import 'package:hostel_management/screens/home/rooms/rooms_screen.dart';
+import 'package:hostel_management/screens/home/tenants/edit_guardian_screen.dart';
+import 'package:hostel_management/screens/home/tenants/edit_phone_screen.dart';
+import 'package:hostel_management/screens/home/tenants/edit_tenant_screen.dart';
+import 'package:hostel_management/screens/home/tenants/tenant_details_screen.dart';
 import 'package:hostel_management/screens/home/tenants/tenants_screen.dart';
 
 GoRouter goRouter = GoRouter(
@@ -33,6 +37,30 @@ GoRouter goRouter = GoRouter(
               path: '/tenants',
               name: 'tenants',
               builder: (context, state) => const TenantsScreen(),
+              routes: [
+                GoRoute(
+                  path: 'edit',
+                  name: 'edit_tenant',
+                  builder: (context, state) => EditTenantScreen(),
+                  routes: [
+                    GoRoute(
+                      path: 'edit_phone',
+                      name: 'edit_phone',
+                      builder: (context, state) => const EditPhoneScreen(),
+                    ),
+                    GoRoute(
+                      path: 'edit_guardian',
+                      name: 'edit_guardian',
+                      builder: (context, state) => EditGuardianScreen(),
+                    ),
+                  ],
+                ),
+                GoRoute(
+                  path: 'tenant',
+                  name: 'tenant',
+                  builder: (context, state) => const TenantDetailsScreen(),
+                ),
+              ],
             ),
           ],
         ),
@@ -44,22 +72,14 @@ GoRouter goRouter = GoRouter(
               builder: (context, state) => const RoomsScreen(),
               routes: [
                 GoRoute(
-                  path: 'add',
-                  name: 'add_room',
-                  builder: (context, state) => const EditRoomDetailsScreen(),
+                  path: 'edit',
+                  name: 'edit_room',
+                  builder: (context, state) => EditRoomScreen(),
                 ),
                 GoRoute(
-                  path: ':id',
+                  path: 'room',
                   name: 'room_details',
                   builder: (context, state) => const RoomDetailsScreen(),
-                  routes: [
-                    GoRoute(
-                      path: 'edit',
-                      name: 'edit_room',
-                      builder: (context, state) =>
-                          const EditRoomDetailsScreen(),
-                    ),
-                  ],
                 ),
               ],
             ),

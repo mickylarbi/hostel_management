@@ -20,7 +20,7 @@ class RoomsScreen extends StatelessWidget {
               Center(
                 child: TextButton.icon(
                   onPressed: () {
-                    context.goNamed('add_room');
+                    context.goNamed('edit_room');
                   },
                   style: TextButton.styleFrom(
                     backgroundColor: Colors.blueAccent.withOpacity(.15),
@@ -37,7 +37,7 @@ class RoomsScreen extends StatelessWidget {
             ],
           ),
           SliverPadding(
-            padding: const EdgeInsets.only(left: 24, right: 24, bottom: 48),
+            padding: const EdgeInsets.all(24),
             sliver: SliverGrid.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
