@@ -26,11 +26,11 @@ class NavBarShell extends StatelessWidget {
             icon: Icon(Icons.people_alt_outlined),
             label: 'Tenants',
           ),
-          BottomNavigationBarItem(
-            activeIcon: Icon(Icons.room_rounded),
-            icon: Icon(Icons.room_outlined),
-            label: 'Rooms',
-          ),
+          // BottomNavigationBarItem(
+          //   activeIcon: Icon(Icons.room_rounded),
+          //   icon: Icon(Icons.room_outlined),
+          //   label: 'Rooms',
+          // ),
           BottomNavigationBarItem(
             activeIcon: Icon(Icons.payments),
             icon: Icon(Icons.payments_outlined),

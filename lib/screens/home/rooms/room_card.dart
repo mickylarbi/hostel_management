@@ -36,10 +36,7 @@ class RoomCard extends StatelessWidget {
                   color: roomColor(room).withOpacity(.1),
                   borderRadius: BorderRadius.circular(16),
                 ),
-                child: Hero(
-                  tag: room.id!,
-                  child: Text(room.number, style: headlineSmall(context)),
-                ),
+                child: Text(room.number, style: headlineSmall(context)),
               ),
             ),
             const Spacer(),

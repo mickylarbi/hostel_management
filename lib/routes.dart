@@ -7,6 +7,10 @@ import 'package:hostel_management/screens/home/payments/payments_screen.dart';
 import 'package:hostel_management/screens/home/rooms/edit_room_screen.dart';
 import 'package:hostel_management/screens/home/rooms/room_details_screen.dart';
 import 'package:hostel_management/screens/home/rooms/rooms_screen.dart';
+import 'package:hostel_management/screens/home/session/edit_room_price_screen.dart';
+import 'package:hostel_management/screens/home/session/edit_sessions_screen.dart';
+import 'package:hostel_management/screens/home/session/session_details_screen.dart';
+import 'package:hostel_management/screens/home/session/sessions_screen.dart';
 import 'package:hostel_management/screens/home/tenants/edit_guardian_screen.dart';
 import 'package:hostel_management/screens/home/tenants/edit_phone_screen.dart';
 import 'package:hostel_management/screens/home/tenants/edit_tenant_screen.dart';
@@ -67,27 +71,6 @@ GoRouter goRouter = GoRouter(
         StatefulShellBranch(
           routes: [
             GoRoute(
-              path: '/rooms',
-              name: 'rooms',
-              builder: (context, state) => const RoomsScreen(),
-              routes: [
-                GoRoute(
-                  path: 'edit',
-                  name: 'edit_room',
-                  builder: (context, state) => EditRoomScreen(),
-                ),
-                GoRoute(
-                  path: 'room',
-                  name: 'room_details',
-                  builder: (context, state) => const RoomDetailsScreen(),
-                ),
-              ],
-            ),
-          ],
-        ),
-        StatefulShellBranch(
-          routes: [
-            GoRoute(
               path: '/payments',
               name: 'payments',
               builder: (context, state) => const PaymentsScreen(),
@@ -100,6 +83,50 @@ GoRouter goRouter = GoRouter(
               path: '/more',
               name: 'more',
               builder: (context, state) => const MoreScreen(),
+              routes: [
+                GoRoute(
+                  path: 'rooms',
+                  name: 'rooms',
+                  builder: (context, state) => const RoomsScreen(),
+                  routes: [
+                    GoRoute(
+                      path: 'edit',
+                      name: 'edit_room',
+                      builder: (context, state) => const EditRoomScreen(),
+                    ),
+                    GoRoute(
+                      path: 'room',
+                      name: 'room_details',
+                      builder: (context, state) => const RoomDetailsScreen(),
+                    ),
+                  ],
+                ),
+                GoRoute(
+                  path: 'sessions',
+                  name: 'sessions',
+                  builder: (context, state) => const SessionsScreen(),
+                  routes: [
+                    GoRoute(
+                      path: 'edit',
+                      name: 'edit_session',
+                      builder: (context, state) => const EditSessionScreen(),
+                      routes: [
+                        GoRoute(
+                          path: 'room_price',
+                          name: 'edit_room_price',
+                          builder: (context, state) =>
+                              const EditRoomPriceScreen(),
+                        ),
+                      ],
+                    ),
+                    GoRoute(
+                      path: 'session',
+                      name: 'session_details',
+                      builder: (context, state) => const SessionDetailsScreen(),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ],
         ),

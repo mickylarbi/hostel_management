@@ -32,19 +32,16 @@ class TenantDetailsScreen extends StatelessWidget {
         padding: const EdgeInsets.all(24),
         children: [
           Center(
-            child: Hero(
-              tag: tenant.id!,
-              child: Container(
-                padding: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  color: Colors.grey[300],
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Text(
-                  getInitials(tenant.name),
-                  style: headlineLarge(context)
-                      .copyWith(fontWeight: FontWeight.w600),
-                ),
+            child: Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: Colors.grey[300],
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Text(
+                getInitials(tenant.name),
+                style: headlineLarge(context)
+                    .copyWith(fontWeight: FontWeight.w600),
               ),
             ),
           ),

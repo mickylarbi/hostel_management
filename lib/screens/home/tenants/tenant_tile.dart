@@ -33,13 +33,10 @@ class TenantTile extends StatelessWidget {
               ],
             ),
           ),
-          Hero(
-            tag: tenant.id!,
-            child: CircleAvatar(
-              child: Text(
-                getInitials(tenant.name),
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
+          CircleAvatar(
+            child: Text(
+              getInitials(tenant.name),
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
         ],

@@ -14,6 +14,8 @@ class App extends StatelessWidget {
         scaffoldBackgroundColor: Colors.grey[50],
         inputDecorationTheme: InputDecorationTheme(
           isDense: true,
+          contentPadding:
+              const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
           hintStyle: TextStyle(color: Colors.grey[500]),
           filled: true,
           fillColor: Colors.grey[300],
@@ -31,14 +33,18 @@ class App extends StatelessWidget {
         ),
         filledButtonTheme: FilledButtonThemeData(
           style: FilledButton.styleFrom(
-            // minimumSize: const Size.fromHeight(44),
-
             padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
             textStyle: const TextStyle(fontWeight: FontWeight.bold),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),
           ),
+        ),
+        datePickerTheme: DatePickerThemeData(
+          headerBackgroundColor: Colors.white,
+          headerForegroundColor: Colors.black,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         ),
       ),
     );

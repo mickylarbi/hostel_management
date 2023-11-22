@@ -39,19 +39,16 @@ class TenantCard extends StatelessWidget {
                   child: const Text('Room 2'),
                 ),
                 const Spacer(),
-                Hero(
-                  tag: tenant.id!,
-                  child: Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      color: Colors.grey[100],
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Text(
-                      getInitials(tenant.name),
-                      style: titleMedium(context)
-                          .copyWith(fontWeight: FontWeight.w600),
-                    ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: Colors.grey[100],
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Text(
+                    getInitials(tenant.name),
+                    style: titleMedium(context)
+                        .copyWith(fontWeight: FontWeight.w600),
                   ),
                 ),
               ],

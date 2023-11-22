@@ -52,12 +52,9 @@ class RoomDetailsScreen extends StatelessWidget {
                       const Spacer(),
                     ],
                   ),
-                  Hero(
-                    tag: room.id!,
-                    child: Text(
-                      room.number,
-                      style: headlineLarge(context).copyWith(),
-                    ),
+                  Text(
+                    room.number,
+                    style: headlineLarge(context).copyWith(),
                   ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,

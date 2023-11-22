@@ -116,6 +116,7 @@ class _EditTenantScreenState extends State<EditTenantScreen> {
                             style: titleMedium(context),
                           ),
                         ),
+                        const SizedBox(width: 10),
                         TextButton(
                           onPressed: () async {
                             Guardian? result =
